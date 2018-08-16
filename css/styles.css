@@ -39,7 +39,7 @@ main {
 .pipe {
   position: absolute;
   background-color: green;
-  right: 0;
+  left: 800px;
   width: 100px;
   height: 600px;
 }
@@ -49,4 +49,10 @@ main {
   width: 80px;
   height: 80px;
   background-color: red;
+}
+
+.score {
+  font-size: 2rem;
+  position: relative;
+  color: white;
 }
