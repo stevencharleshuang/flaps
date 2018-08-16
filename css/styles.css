@@ -1,0 +1,52 @@
+html {
+  /*margin: 0 auto;*/
+  font-size: 62.5%;
+}
+
+body {
+  text-align: center;
+}
+
+header {}
+
+main {
+}
+
+.game-screen {
+  margin: 0 auto;
+  padding: 0;
+  background-color: #222;
+  width: 800px;
+  height: 600px;
+  overflow: hidden;
+}
+
+.new-game-btn {
+  border-radius: 1rem;
+  font-size: 2.8rem;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #eee;
+  width: 200px;
+  height: 100px;
+}
+
+.new-game-btn:hover {
+  cursor: pointer;
+  background-color: #bbb;
+}
+
+.pipe {
+  position: absolute;
+  background-color: green;
+  right: 0;
+  width: 100px;
+  height: 600px;
+}
+
+.bird {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: red;
+}
