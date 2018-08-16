@@ -2,10 +2,10 @@ $(document).ready(() => {
   // console.log('jQuery operational')
   const $gameBoard = $('.game-screen');
   const $newGameBtn = $('.new-game-btn');
+  const $gameBorders = $('.game-screen')[0].getBoundingClientRect();
   let $bird;
   let $pipe;
   let score;
-
 
   const initBird = () => {
     console.log('initBird Fired!');
@@ -16,13 +16,18 @@ $(document).ready(() => {
 
   const birdGravity = () => {
     let $birdBCR;
-    setInterval(() => {
+    let fall = setInterval(() => {
       $birdBCR = $('.bird')[0].getBoundingClientRect();
-      console.log($birdBCR);
-      $bird.css({
-        'top': $birdBCR.top + 20
-      });
-    }, 250);
+      // console.log($birdBCR);
+      if ($birdBCR.bottom <= $gameBorders.bottom) {
+        $bird.css({
+          'top': $birdBCR.top + 50
+        });
+      } else {
+        clearInterval(fall);
+        alert('You died.');
+      }
+    }, 100);
   }
 
   const initPipes = () => {
@@ -54,8 +59,8 @@ $(document).ready(() => {
 
   const initTimer = () => {
     score = 0;
-    console.log('initTimer Fired!');
-    console.log(score);
+    // console.log('initTimer Fired!');
+    // console.log(score);
     $gameBoard.append(`<div class="score">SCORE: <span id="score-counter">${score}</span></div>`);
     initScore();
   }
