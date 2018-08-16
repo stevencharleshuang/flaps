@@ -2,6 +2,7 @@ $(document).ready(() => {
   // console.log('jQuery operational')
   const $gameBoard = $('.game-screen');
   const $newGameBtn = $('.new-game-btn');
+  let $bird;
   let $pipe;
   let score;
 
@@ -9,11 +10,19 @@ $(document).ready(() => {
   const initBird = () => {
     console.log('initBird Fired!');
     $gameBoard.append('<div class="bird">bird</div>');
+    $bird = $('.bird')
     birdGravity();
   }
 
   const birdGravity = () => {
-
+    let $birdBCR;
+    setInterval(() => {
+      $birdBCR = $('.bird')[0].getBoundingClientRect();
+      console.log($birdBCR);
+      $bird.css({
+        'top': $birdBCR.top + 20
+      });
+    }, 250);
   }
 
   const initPipes = () => {
